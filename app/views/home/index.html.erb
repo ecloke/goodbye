@@ -17,15 +17,71 @@
       </div>
       <div class='row'>
         <div class='col-sm-6'>
-          <div class="large-12 small-12 columns">
-            <div class="large-6 small-12 columns">
-              <%= image_tag "first.png" %>
-            </div>
-
-            <div class="large-6 small-12 columns">
-              <h2>My First Booth</h2>
-            </div>
-          </div>
+          <section class="timeline">
+            <ul>
+              <li>
+                <div>
+                  <h3>My First Booth Experience</h3>
+                  <h6 class="text_white">This is my first time seeing the founders in action!</h6>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1937</time> Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi. Suspendisse finibus mauris et bibendum molestie. Aenean ex augue, varius et pulvinar in, pretium non nisi.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1940</time> Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor, at pulvinar tortor ex eget ligula. Integer eu dapibus arcu, sit amet sollicitudin eros.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1943</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1946</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1956</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1957</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1967</time> Aenean condimentum odio a bibendum rhoncus. Ut mauris felis, volutpat eget porta faucibus, euismod quis ante.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1977</time> Vestibulum porttitor lorem sed pharetra dignissim. Nulla maximus, dui a tristique iaculis, quam dolor convallis enim, non dignissim ligula ipsum a turpis.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>1985</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>2000</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+              <li>
+                <div>
+                  <time>2005</time> In mattis elit vitae odio posuere, nec maximus massa varius. Suspendisse varius volutpat mattis. Vestibulum id magna est.
+                </div>
+              </li>
+            </ul>
+          </section>
         </div>
       </div>
     </section>
@@ -53,7 +109,39 @@
   });
 
 }).call(this);
+(function() {
 
+  'use strict';
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+
+})();
 //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiPGFub255bW91cz4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBQTtFQUVBLE1BQU0sQ0FBQyxnQkFBUCxDQUF3QixRQUF4QixFQUFrQyxRQUFBLENBQUMsS0FBRCxDQUFBO0FBQ2hDLFFBQUEsS0FBQSxFQUFBLENBQUEsRUFBQSxLQUFBLEVBQUEsTUFBQSxFQUFBLEdBQUEsRUFBQSxRQUFBLEVBQUEsV0FBQSxFQUFBO0lBQUEsV0FBQSxHQUFjLElBQUMsQ0FBQTtJQUNmLE1BQUEsR0FBUyxRQUFRLENBQUMsZ0JBQVQsQ0FBMEIsd0JBQTFCO0lBRVQsS0FBQSx3Q0FBQTs7TUFDRSxLQUFBLEdBQVEsS0FBSyxDQUFDLFlBQU4sQ0FBbUIsWUFBbkI7TUFDUixRQUFBLEdBQVcsQ0FBQyxDQUFDLFdBQUEsR0FBYyxLQUFmO01BQ1osV0FBQSxHQUFjLGlCQUFBLEdBQW9CLFFBQXBCLEdBQStCO01BQzdDLEtBQUssQ0FBQyxLQUFNLENBQUEsbUJBQUEsQ0FBWixHQUFtQztNQUNuQyxLQUFLLENBQUMsS0FBTSxDQUFBLGdCQUFBLENBQVosR0FBZ0M7TUFDaEMsS0FBSyxDQUFDLEtBQU0sQ0FBQSxlQUFBLENBQVosR0FBK0I7TUFDL0IsS0FBSyxDQUFDLEtBQU0sQ0FBQSxjQUFBLENBQVosR0FBOEI7TUFDOUIsS0FBSyxDQUFDLEtBQUssQ0FBQyxTQUFaLEdBQXdCO0lBUjFCO0VBSmdDLENBQWxDO0FBRkEiLCJzb3VyY2VzQ29udGVudCI6WyIjIFR1dG9yaWFsOiBodHRwczovL21lZGl1bS5jb20vQFBhdHJ5a1phYmllbHNraS9ob3ctdG8tbWFrZS1tdWx0aS1sYXllcmVkLXBhcmFsbGF4LWlsbHVzdHJhdGlvbi13aXRoLWNzcy1qYXZhc2NyaXB0LTJiNTY4ODNjM2YyN1xuXG53aW5kb3cuYWRkRXZlbnRMaXN0ZW5lciAnc2Nyb2xsJywgKGV2ZW50KSAtPlxuICB0b3BEaXN0YW5jZSA9IEBwYWdlWU9mZnNldCBcbiAgbGF5ZXJzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbChcIltkYXRhLXR5cGU9J3BhcmFsbGF4J11cIilcbiAgXG4gIGZvciBsYXllciBpbiBsYXllcnNcbiAgICBkZXB0aCA9IGxheWVyLmdldEF0dHJpYnV0ZSgnZGF0YS1kZXB0aCcpXG4gICAgbW92ZW1lbnQgPSAtKHRvcERpc3RhbmNlICogZGVwdGgpXG4gICAgdHJhbnNsYXRlM2QgPSAndHJhbnNsYXRlM2QoMCwgJyArIG1vdmVtZW50ICsgJ3B4LCAwKSdcbiAgICBsYXllci5zdHlsZVsnLXdlYmtpdC10cmFuc2Zvcm0nXSA9IHRyYW5zbGF0ZTNkXG4gICAgbGF5ZXIuc3R5bGVbJy1tb3otdHJhbnNmb3JtJ10gPSB0cmFuc2xhdGUzZFxuICAgIGxheWVyLnN0eWxlWyctbXMtdHJhbnNmb3JtJ10gPSB0cmFuc2xhdGUzZFxuICAgIGxheWVyLnN0eWxlWyctby10cmFuc2Zvcm0nXSA9IHRyYW5zbGF0ZTNkXG4gICAgbGF5ZXIuc3R5bGUudHJhbnNmb3JtID0gdHJhbnNsYXRlM2RcbiAgcmV0dXJuIl19
 //# sourceURL=coffeescript
 </script>
