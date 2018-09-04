@@ -267,6 +267,26 @@ p {
 .layer-4 {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_01.png");
 }
+
+.layer-5 {
+  background-image: url("http://demos.creative-tim.com/paper-kit-2/assets/img/clouds.png");
+  -webkit-animation: cloudLoop 80s linear infinite;
+  animation: cloudLoop 80s linear infinite;
+  width: 250.625em;
+  height: 43.75em;
+}
+
+@keyframes cloudLoop {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 .layer-overlay {
   background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/272781/ilu_overlay.png");
 }
@@ -290,5 +310,9 @@ p {
     color: #ede0d5;
   }
 }
+
+
+
+
 
 
