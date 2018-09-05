@@ -1,3 +1,9 @@
+audio {
+  position: absolute;
+  opacity: 0;
+  z-index: 99999;
+}
+
 *,
 *::before,
 *::after {
